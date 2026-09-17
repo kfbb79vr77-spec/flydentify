@@ -17,4 +17,3 @@ data.db-journal
 
 # iOS Capacitor build — excluded from publish tarball
 ios/
-attached_assets/
