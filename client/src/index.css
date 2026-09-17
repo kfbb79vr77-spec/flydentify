@@ -1,0 +1,187 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* LIGHT MODE — River Stone & Amber */
+:root {
+  --button-outline: rgba(0, 0, 0, 0.1);
+  --badge-outline: rgba(0, 0, 0, 0.05);
+  --opaque-button-border-intensity: -8;
+  --elevate-1: rgba(0, 0, 0, 0.03);
+  --elevate-2: rgba(0, 0, 0, 0.08);
+  /* Warm parchment / river stone surfaces */
+  --background: 38 22% 95%;
+  --foreground: 30 20% 12%;
+  --border: 35 12% 82%;
+  --card: 38 20% 97%;
+  --card-foreground: 30 20% 12%;
+  --card-border: 35 12% 88%;
+  --sidebar: 180 28% 14%;
+  --sidebar-foreground: 38 20% 90%;
+  --sidebar-border: 180 20% 20%;
+  --sidebar-primary: 168 55% 32%;
+  --sidebar-primary-foreground: 38 20% 96%;
+  --sidebar-accent: 180 20% 22%;
+  --sidebar-accent-foreground: 38 20% 90%;
+  --sidebar-ring: 168 55% 32%;
+  /* FW amber as primary */
+  --primary: 33 47% 43%;
+  --primary-foreground: 38 20% 96%;
+  --secondary: 35 15% 88%;
+  --secondary-foreground: 30 20% 12%;
+  --muted: 35 12% 90%;
+  --muted-foreground: 30 10% 45%;
+  --accent: 168 30% 88%;
+  --accent-foreground: 180 60% 18%;
+  --destructive: 0 72% 42%;
+  --destructive-foreground: 0 0% 98%;
+  --input: 35 15% 78%;
+  --ring: 33 47% 43%;
+  --popover: 38 22% 97%;
+  --popover-foreground: 30 20% 12%;
+  --popover-border: 35 12% 85%;
+  --chart-1: 168 55% 32%;
+  --chart-2: 42 80% 45%;
+  --chart-3: 25 65% 38%;
+  --chart-4: 200 50% 38%;
+  --chart-5: 310 40% 40%;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-caps: "Cinzel", "Copperplate", serif;
+  --font-mono: Menlo, monospace;
+  --radius: 0.375rem;
+  --shadow-2xs: 0px 1px 2px 0px hsl(30 20% 12% / 0.06);
+  --shadow-xs: 0px 1px 3px 0px hsl(30 20% 12% / 0.08);
+  --shadow-sm: 0px 2px 6px 0px hsl(30 20% 12% / 0.08), 0px 1px 2px -1px hsl(30 20% 12% / 0.04);
+  --shadow: 0px 3px 10px 0px hsl(30 20% 12% / 0.10), 0px 1px 4px -1px hsl(30 20% 12% / 0.06);
+  --shadow-md: 0px 4px 16px 0px hsl(30 20% 12% / 0.10), 0px 2px 6px -1px hsl(30 20% 12% / 0.06);
+  --shadow-lg: 0px 8px 24px 0px hsl(30 20% 12% / 0.12), 0px 4px 10px -2px hsl(30 20% 12% / 0.07);
+  --shadow-xl: 0px 16px 40px 0px hsl(30 20% 12% / 0.14), 0px 8px 16px -4px hsl(30 20% 12% / 0.08);
+  --shadow-2xl: 0px 24px 60px 0px hsl(30 20% 12% / 0.18);
+  --tracking-normal: 0em;
+  --spacing: 0.25rem;
+  --sidebar-primary-border: hsl(var(--sidebar-primary));
+  --primary-border: hsl(var(--primary));
+  --secondary-border: hsl(var(--secondary));
+  --muted-border: hsl(var(--muted));
+  --accent-border: hsl(var(--accent));
+  --destructive-border: hsl(var(--destructive));
+  --sidebar-accent-border: hsl(var(--sidebar-accent));
+}
+
+.dark {
+  --button-outline: rgba(255, 255, 255, 0.08);
+  --badge-outline: rgba(255, 255, 255, 0.05);
+  --opaque-button-border-intensity: 9;
+  --elevate-1: rgba(255, 255, 255, 0.03);
+  --elevate-2: rgba(255, 255, 255, 0.07);
+  /* Deep forest night */
+  --background: 210 15% 8%;
+  --foreground: 38 18% 88%;
+  --border: 210 12% 18%;
+  --card: 210 12% 10%;
+  --card-foreground: 38 18% 88%;
+  --card-border: 210 12% 15%;
+  --sidebar: 210 15% 6%;
+  --sidebar-foreground: 38 16% 85%;
+  --sidebar-border: 210 12% 13%;
+  --sidebar-primary: 33 47% 55%;
+  --sidebar-primary-foreground: 210 15% 8%;
+  --sidebar-accent: 210 12% 14%;
+  --sidebar-accent-foreground: 38 16% 85%;
+  --sidebar-ring: 33 47% 55%;
+  --primary: 33 47% 55%;
+  --primary-foreground: 210 15% 8%;
+  --secondary: 185 12% 16%;
+  --secondary-foreground: 38 18% 88%;
+  --muted: 185 12% 14%;
+  --muted-foreground: 38 8% 55%;
+  --accent: 185 18% 18%;
+  --accent-foreground: 168 45% 55%;
+  --destructive: 0 72% 52%;
+  --destructive-foreground: 0 0% 98%;
+  --input: 185 12% 22%;
+  --ring: 33 47% 55%;
+  --popover: 185 18% 11%;
+  --popover-foreground: 38 18% 88%;
+  --popover-border: 185 12% 16%;
+  --chart-1: 168 45% 50%;
+  --chart-2: 42 70% 55%;
+  --chart-3: 25 60% 52%;
+  --chart-4: 200 50% 55%;
+  --chart-5: 310 40% 55%;
+  --shadow-2xs: 0px 1px 2px 0px hsl(0 0% 0% / 0.25);
+  --shadow-xs: 0px 1px 3px 0px hsl(0 0% 0% / 0.30);
+  --shadow-sm: 0px 2px 6px 0px hsl(0 0% 0% / 0.30), 0px 1px 2px -1px hsl(0 0% 0% / 0.20);
+  --shadow: 0px 3px 10px 0px hsl(0 0% 0% / 0.35), 0px 1px 4px -1px hsl(0 0% 0% / 0.25);
+  --shadow-md: 0px 4px 16px 0px hsl(0 0% 0% / 0.35), 0px 2px 6px -1px hsl(0 0% 0% / 0.25);
+  --shadow-lg: 0px 8px 24px 0px hsl(0 0% 0% / 0.40), 0px 4px 10px -2px hsl(0 0% 0% / 0.28);
+  --shadow-xl: 0px 16px 40px 0px hsl(0 0% 0% / 0.45), 0px 8px 16px -4px hsl(0 0% 0% / 0.32);
+  --shadow-2xl: 0px 24px 60px 0px hsl(0 0% 0% / 0.55);
+  --sidebar-primary-border: hsl(var(--sidebar-primary));
+  --primary-border: hsl(var(--primary));
+  --secondary-border: hsl(var(--secondary));
+  --muted-border: hsl(var(--muted));
+  --accent-border: hsl(var(--accent));
+  --destructive-border: hsl(var(--destructive));
+  --sidebar-accent-border: hsl(var(--sidebar-accent));
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: hsl(var(--border)); border-radius: 3px; }
+
+/* Fly card hover effect */
+.fly-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.fly-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Hero gradient overlay */
+.hero-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(8, 28, 28, 0.35) 0%,
+    rgba(8, 28, 28, 0.15) 40%,
+    rgba(8, 28, 28, 0.70) 100%
+  );
+}
+
+/* Confidence pill */
+.confidence-high { background: hsl(168 55% 88%); color: hsl(168 60% 18%); }
+.confidence-med  { background: hsl(42 80% 88%);  color: hsl(42 80% 22%); }
+.confidence-low  { background: hsl(35 20% 86%);  color: hsl(35 20% 30%); }
+
+.dark .confidence-high { background: hsl(168 35% 20%); color: hsl(168 45% 65%); }
+.dark .confidence-med  { background: hsl(42 50% 20%);  color: hsl(42 70% 65%); }
+.dark .confidence-low  { background: hsl(35 12% 20%);  color: hsl(35 20% 65%); }
+
+/* Field Notes marquee animation */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  @keyframes marquee {
+    0%, 100% { transform: translateX(0); }
+  }
+}

@@ -1,0 +1,286 @@
+// ─── Saltwater State Data ─────────────────────────────────────────────────────
+// Coastal state fishing info, mirrors stateData.ts structure for Finder integration
+
+export interface SWStateInfo {
+  name: string;
+  abbr: string;
+  swRegion: string;
+  topDestinations: string[];   // flats, bays, estuaries, equivalent to rivers
+  targetSpecies: string[];
+  bestMonths: number[];
+  tideNotes: string[];         // equivalent to hatches, what's happening when
+  quickTip: string;
+  licenseUrl: string;
+  guideAssociation?: string;
+}
+
+export const swStateData: Record<string, SWStateInfo> = {
+  // ── GULF COAST FLATS ───────────────────────────────────────────────────────
+  TX: {
+    name: "Texas",
+    abbr: "TX",
+    swRegion: "gulf_coast_flats",
+    topDestinations: ["Laguna Madre", "Aransas Bay", "Matagorda Bay", "Sabine Lake", "Galveston Bay"],
+    targetSpecies: ["Redfish", "Spotted Seatrout", "Flounder", "Tarpon (seasonal)", "Sheepshead"],
+    bestMonths: [3, 4, 5, 9, 10, 11],
+    tideNotes: ["Redfish tailing (Mar-May)", "Dawn trout topwater (Spring/Fall)", "Tarpon in passes (June-Aug)", "Bull reds schooling (Sep-Nov)"],
+    quickTip: "The Lower Laguna Madre between South Padre and Port Mansfield is the crown jewel of Texas fly fishing, shallow, clear, and full of tailing reds year-round.",
+    licenseUrl: "https://tpwd.texas.gov/business/licenses/online_sales/",
+  },
+  LA: {
+    name: "Louisiana",
+    abbr: "LA",
+    swRegion: "gulf_coast_flats",
+    topDestinations: ["Lafitte Marsh", "Calcasieu Lake", "Golden Triangle", "Grand Isle", "Biloxi Marsh"],
+    targetSpecies: ["Redfish", "Spotted Seatrout", "Flounder", "Tarpon", "Cobia"],
+    bestMonths: [3, 4, 5, 9, 10, 11],
+    tideNotes: ["Tailing reds in marsh (Spring/Fall)", "Trout in grass beds (Mar-June)", "Tarpon in passes (June-Aug)", "Fall schooling reds (Sep-Nov)"],
+    quickTip: "Louisiana's Calcasieu Lake ('Cal Lake') is the world's best redfish-on-fly destination, 30+ fish days are routine in fall. Hire a local guide who runs a skiff.",
+    licenseUrl: "https://www.wlf.louisiana.gov/page/fishing-license",
+  },
+  MS: {
+    name: "Mississippi",
+    abbr: "MS",
+    swRegion: "gulf_coast_flats",
+    topDestinations: ["Biloxi Marsh", "Grand Bay", "Pascagoula River Estuary", "Cat Island Flats"],
+    targetSpecies: ["Redfish", "Spotted Seatrout", "Flounder", "Sheepshead"],
+    bestMonths: [3, 4, 5, 9, 10],
+    tideNotes: ["Reds on flats (Spring/Fall)", "Trout in grass (Apr-June)", "Flounder in passes (Summer)"],
+    quickTip: "The Biloxi Marsh offers some of the best sight-casting for redfish in the Gulf, wade the back bays or pole a skiff on the higher tides.",
+    licenseUrl: "https://www.mdwfp.com/fishing/fishing-regulations/licensing/",
+  },
+  AL: {
+    name: "Alabama",
+    abbr: "AL",
+    swRegion: "gulf_coast_flats",
+    topDestinations: ["Mobile Bay Delta", "Dauphin Island Flats", "Perdido Bay", "Fort Morgan Flats"],
+    targetSpecies: ["Redfish", "Spotted Seatrout", "Flounder", "Sheepshead", "Spanish Mackerel"],
+    bestMonths: [3, 4, 5, 9, 10],
+    tideNotes: ["Reds on Gulf-side flats (Spring)", "Trout in Mobile Delta grass (Apr-June)", "Flounder in passes (Summer/Fall)"],
+    quickTip: "Mobile Bay's Delta marshes are underrated, big redfish on fly in the back bays of the Tensaw and Tombigbee rivers. Minimal boat traffic, excellent sight fishing.",
+    licenseUrl: "https://www.outdooralabama.com/licenses-and-regulations",
+  },
+  FL: {
+    name: "Florida",
+    abbr: "FL",
+    swRegion: "florida_keys",
+    topDestinations: ["Islamorada Flats", "Key West Backcountry", "Marquesas Keys", "Biscayne Bay", "Florida Bay", "Tampa Bay"],
+    targetSpecies: ["Bonefish", "Permit", "Tarpon", "Redfish", "Snook", "Spotted Seatrout", "Cobia"],
+    bestMonths: [3, 4, 5, 10, 11, 12],
+    tideNotes: ["Bonefish year-round (peak Nov-May)", "Tarpon migration (Apr-June)", "Permit on oceanside (Mar-May, Sep-Oct)", "Snook in mangroves (May-Sep)", "Grand Slam possible (Apr-May)"],
+    quickTip: "The Florida Keys Grand Slam, bonefish, permit, and tarpon in a single day, is the pinnacle of saltwater fly fishing. April and May are your best shot. Book a guide a year in advance.",
+    licenseUrl: "https://myfwc.com/license/recreational/saltwater-fishing/",
+  },
+
+  // ── CAROLINA INSHORE ───────────────────────────────────────────────────────
+  NC: {
+    name: "North Carolina",
+    abbr: "NC",
+    swRegion: "carolina_inshore",
+    topDestinations: ["Outer Banks Flats", "Cape Fear Estuary", "Core Sound", "Pamlico Sound", "New River Estuary"],
+    targetSpecies: ["Redfish", "Spotted Seatrout", "Flounder", "Cobia", "Spanish Mackerel"],
+    bestMonths: [4, 5, 6, 9, 10],
+    tideNotes: ["Cobia migration on Outer Banks (Apr-May)", "Redfish on Pamlico flats (May-June)", "Trout in grass beds (Spring/Fall)", "Fall redfish schooling (Sep-Oct)"],
+    quickTip: "The Outer Banks cobia season (April-May) is uniquely accessible by fly, sight-cast from a boat to cobia following rays in the nearshore water. A 10-wt and Half-and-Half is all you need.",
+    licenseUrl: "https://www.ncwildlife.org/Licensing",
+  },
+  SC: {
+    name: "South Carolina",
+    abbr: "SC",
+    swRegion: "carolina_inshore",
+    topDestinations: ["ACE Basin", "Port Royal Sound", "Bulls Bay", "Charleston Harbor", "Hilton Head Flats"],
+    targetSpecies: ["Redfish", "Spotted Seatrout", "Flounder", "Cobia", "Sheepshead"],
+    bestMonths: [3, 4, 5, 9, 10],
+    tideNotes: ["Flood tide redfish in spartina (May-Sep)", "Spring schoolie reds (Mar-Apr)", "Dawn trout topwater (Spring/Fall)", "Fall bull reds (Sep-Oct)"],
+    quickTip: "ACE Basin flood tide redfishing is as good as it gets on the East Coast. A 6-wt, a weedless EP Shrimp, and waist-deep water in the spartina, it doesn't get more primal.",
+    licenseUrl: "https://www.dnr.sc.gov/fish/licenses.html",
+  },
+  GA: {
+    name: "Georgia",
+    abbr: "GA",
+    swRegion: "carolina_inshore",
+    topDestinations: ["Golden Isles Flats (Jekyll, St. Simons, Cumberland)", "Altamaha River Delta", "Brunswick Harbor", "Ossabaw Sound"],
+    targetSpecies: ["Redfish", "Spotted Seatrout", "Flounder", "Sheepshead"],
+    bestMonths: [3, 4, 5, 9, 10, 11],
+    tideNotes: ["Tailing reds on flood tide (Spring/Fall)", "Spring trout on grass flats (Mar-May)", "Flood tide marsh fishing (June-Aug)", "Fall schooling reds (Sep-Nov)"],
+    quickTip: "Georgia's Golden Isles are fly fishing's best-kept secret, world-class tailing redfish in pristine spartina marsh, with almost no pressure compared to South Carolina or Texas.",
+    licenseUrl: "https://georgiawildlife.com/FishingLicenses",
+  },
+  VA: {
+    name: "Virginia",
+    abbr: "VA",
+    swRegion: "carolina_inshore",
+    topDestinations: ["Chesapeake Bay Flats", "Virginia Beach Nearshore", "Smith Island", "Tangier Sound", "York River Estuary"],
+    targetSpecies: ["Striped Bass", "Red Drum", "Cobia", "Flounder", "Bluefish"],
+    bestMonths: [5, 6, 9, 10],
+    tideNotes: ["Cobia at nearshore buoys (May-June)", "Stripers in Bay (Apr-June, Sep-Oct)", "Drum on Chesapeake flats (Sep-Nov)", "Flounder in estuary (Summer)"],
+    quickTip: "Virginia Beach cobia buoy season (May-June) is one of the most unique fly fishing experiences in America, sight-cast to large cobia cruising near offshore buoys from a boat.",
+    licenseUrl: "https://www.dgif.virginia.gov/fishing/licenses/",
+  },
+
+  // ── STRIPER COAST ─────────────────────────────────────────────────────────
+  ME: {
+    name: "Maine",
+    abbr: "ME",
+    swRegion: "striper_coast",
+    topDestinations: ["Penobscot Bay", "Kennebec River Estuary", "Scarborough Marsh", "Casco Bay", "Damariscotta River"],
+    targetSpecies: ["Striped Bass", "Bluefish", "Atlantic Salmon (limited)", "Pollock"],
+    bestMonths: [6, 7, 8, 9],
+    tideNotes: ["Schoolie stripers arrive (May-June)", "Adult bass on structure (June-Aug)", "Fall migration (Sep-Oct)", "Bluefish blitzes (Aug-Sep)"],
+    quickTip: "Maine stripers are underrated. The Kennebec and Penobscot estuaries hold big fish all summer. Fish rocky points on the outgoing tide at dawn, a 9-wt and Deceiver is all you need.",
+    licenseUrl: "https://www.maine.gov/ifw/fish-wildlife/fishing/licenses-permits/index.html",
+  },
+  MA: {
+    name: "Massachusetts",
+    abbr: "MA",
+    swRegion: "striper_coast",
+    topDestinations: ["Cape Cod Canal", "Monomoy Island Flats", "Nauset Beach", "Vineyard Sound", "Plymouth Beach", "Provincetown"],
+    targetSpecies: ["Striped Bass", "Bluefish", "Bonito", "False Albacore", "Pollock"],
+    bestMonths: [5, 6, 7, 8, 9, 10],
+    tideNotes: ["Stripers at Cape Cod Canal (May-Jun)", "Flats fishing at Monomoy (Jun-Aug)", "Bonito/Albie season (Aug-Oct)", "Fall blitz at Provincetown (Sep-Oct)"],
+    quickTip: "The 'Albie Run' (false albacore) at Martha's Vineyard and Nantucket in September/October is fly fishing's hidden gem, electric speed, technical presentation, and a fish that mocks you regularly.",
+    licenseUrl: "https://www.mass.gov/saltwater-fishing-licenses",
+  },
+  RI: {
+    name: "Rhode Island",
+    abbr: "RI",
+    swRegion: "striper_coast",
+    topDestinations: ["Narragansett Bay", "Block Island Sound", "Charlestown Beach", "Point Judith", "Sakonnet River"],
+    targetSpecies: ["Striped Bass", "Bluefish", "Bonito", "False Albacore"],
+    bestMonths: [5, 6, 7, 9, 10],
+    tideNotes: ["Stripers in Narragansett Bay (May-June)", "Summer bass on offshore structure (June-Aug)", "False albacore run (Aug-Oct)", "Fall migration (Sep-Oct)"],
+    quickTip: "Block Island in September: false albacore and bonito in the rips at sunrise. 9-wt, clear intermediate line, small Clouser. One of the finest early morning salt fly experiences on the East Coast.",
+    licenseUrl: "https://dem.ri.gov/natural-resources-bureau/fish-wildlife/fisheries-regulation/recreational-fishing-licenses",
+  },
+  CT: {
+    name: "Connecticut",
+    abbr: "CT",
+    swRegion: "striper_coast",
+    topDestinations: ["Housatonic River Estuary", "Long Island Sound", "Connecticut River Mouth", "Niantic Bay", "Weekapaug Breachway"],
+    targetSpecies: ["Striped Bass", "Bluefish", "Weakfish", "Flounder"],
+    bestMonths: [5, 6, 7, 9, 10],
+    tideNotes: ["Schoolie stripers in rivers (Apr-May)", "Adult bass in Sound (June-Aug)", "Bluefish blitzes (Summer)", "Fall bass run (Sep-Oct)"],
+    quickTip: "The Connecticut River mouth is a spring staging area for striped bass, classic New England estuarine fishing. Fish the outgoing tide in the river channel at first light in May.",
+    licenseUrl: "https://portal.ct.gov/DEEP/Fishing/Saltwater/Saltwater-Fishing-Licenses",
+  },
+  NY: {
+    name: "New York",
+    abbr: "NY",
+    swRegion: "striper_coast",
+    topDestinations: ["Montauk Point", "Fire Island", "Jamaica Bay", "Hudson River (Tidal)", "Great South Bay", "East End Rips"],
+    targetSpecies: ["Striped Bass", "Bluefish", "False Albacore", "Bonito", "Weakfish"],
+    bestMonths: [5, 6, 9, 10],
+    tideNotes: ["Striper arrival at Montauk (May)", "Big bass on bunker schools (June)", "Fall migration through Montauk (Sep-Nov)", "False albacore in the Rips (Aug-Oct)"],
+    quickTip: "Montauk in October is fly fishing's Super Bowl. The fall striper migration pushes through the Point with bunker schools, 40-lb fish in the surf. 10-wt, 350-gr sinking line, big Deceiver.",
+    licenseUrl: "https://www.dec.ny.gov/outdoor/7742.html",
+  },
+  NJ: {
+    name: "New Jersey",
+    abbr: "NJ",
+    swRegion: "striper_coast",
+    topDestinations: ["Sandy Hook", "Barnegat Bay", "Delaware Bay", "Cape May Rips", "Raritan Bay"],
+    targetSpecies: ["Striped Bass", "Bluefish", "Weakfish", "Flounder"],
+    bestMonths: [4, 5, 6, 9, 10],
+    tideNotes: ["Spring stripers at Sandy Hook (Apr-May)", "Delaware Bay blitz (May)", "Summer bluefish (June-Sep)", "Fall bass run (Sep-Oct)"],
+    quickTip: "Sandy Hook in May: schoolie bass in the skinny water of Raritan Bay, with Manhattan as a backdrop. Unusual and memorable fly fishing in an urban setting.",
+    licenseUrl: "https://dep.nj.gov/marine/saltwater-reg-fishing-priv/",
+  },
+  MD: {
+    name: "Maryland",
+    abbr: "MD",
+    swRegion: "striper_coast",
+    topDestinations: ["Chesapeake Bay Upper Bay", "Susquehanna Flats", "Patuxent River", "Eastern Shore Flats", "Tilghman Island"],
+    targetSpecies: ["Striped Bass", "Bluefish", "Weakfish", "Cobia", "Red Drum"],
+    bestMonths: [4, 5, 6, 9, 10],
+    tideNotes: ["Stripers at Susquehanna Flats (Apr-May)", "Big bass in Bay (May-June)", "Cobia at Bay mouth (June-July)", "Fall striper run (Oct-Nov)"],
+    quickTip: "The Susquehanna Flats in April is one of the oldest and most storied striper fisheries in America, huge spring-run fish congregate in shallow water and can be sight-fished on fly.",
+    licenseUrl: "https://dnr.maryland.gov/fisheries/pages/licensing/index.aspx",
+  },
+  DE: {
+    name: "Delaware",
+    abbr: "DE",
+    swRegion: "striper_coast",
+    topDestinations: ["Delaware Bay", "Lewes Beach", "Bethany Beach Surf", "Indian River Bay"],
+    targetSpecies: ["Striped Bass", "Bluefish", "Weakfish", "Flounder"],
+    bestMonths: [4, 5, 6, 9, 10],
+    tideNotes: ["Spring stripers in Delaware Bay (Apr-May)", "Summer bluefish on surf (June-Aug)", "Fall bass migration (Sep-Oct)"],
+    quickTip: "Delaware Bay in May hosts one of the great striper blitzes on the East Coast, fish chasing horseshoe crab spawning. Match small crab patterns and the action can be extraordinary.",
+    licenseUrl: "https://www.dnrec.delaware.gov/fw/Fishing/Pages/Fishing-Licenses.aspx",
+  },
+  PA: {
+    name: "Pennsylvania",
+    abbr: "PA",
+    swRegion: "striper_coast",
+    topDestinations: ["Delaware River (Tidal)", "Delaware Estuary", "Back Bay Areas near Philadelphia"],
+    targetSpecies: ["Striped Bass", "Bluefish"],
+    bestMonths: [4, 5, 10],
+    tideNotes: ["Spring stripers in tidal Delaware (Apr-May)", "Fall migration pass-through (Oct)"],
+    quickTip: "Pennsylvania has limited saltwater access via the tidal Delaware River, but spring stripers move through the lower river. A kayak and a 9-wt opens up overlooked urban fly fishing.",
+    licenseUrl: "https://www.fishandboat.com/Obtain/Licenses/Pages/Licenses.aspx",
+  },
+
+  // ── PACIFIC INSHORE ───────────────────────────────────────────────────────
+  CA: {
+    name: "California",
+    abbr: "CA",
+    swRegion: "pacific_inshore",
+    topDestinations: ["San Francisco Bay", "Tomales Bay", "Morro Bay", "Humboldt Bay", "Bodega Bay", "Sacramento Delta"],
+    targetSpecies: ["Striped Bass", "Pacific Halibut", "Leopard Shark", "Rockfish", "Salmon (seasonal)"],
+    bestMonths: [4, 5, 6, 7, 8, 9],
+    tideNotes: ["Stripers in SF Bay and Delta (Apr-Oct)", "Halibut on bay flats (May-Aug)", "Leopard shark on flats (May-Sep)", "Salmon in river mouths (Aug-Oct)"],
+    quickTip: "San Francisco Bay is one of the most underrated saltwater fly fisheries in the country, world-class striped bass in the shadow of the Golden Gate. A 7-wt and Clouser gets the job done.",
+    licenseUrl: "https://www.wildlife.ca.gov/Licensing/Fishing",
+  },
+  OR: {
+    name: "Oregon",
+    abbr: "OR",
+    swRegion: "pacific_inshore",
+    topDestinations: ["Tillamook Bay", "Yaquina Bay", "Coos Bay", "Columbia River Mouth", "Winchester Bay"],
+    targetSpecies: ["Coho Salmon", "Chinook Salmon", "Striped Bass", "Pacific Halibut", "Rockfish"],
+    bestMonths: [7, 8, 9, 10],
+    tideNotes: ["Coho in tidal reaches (Aug-Oct)", "Chinook nearshore and in bays (Sep-Oct)", "Halibut in bay mouths (June-Sep)", "Stripers in tidal rivers (May-Sep)"],
+    quickTip: "The Columbia River bar in September: chrome coho stacking in the tidal reach, one of the Pacific Coast's great accessible salmon-on-fly fisheries. Use a 9-wt and a silver Deceiver.",
+    licenseUrl: "https://www.dfw.state.or.us/fish/licence/",
+  },
+  WA: {
+    name: "Washington",
+    abbr: "WA",
+    swRegion: "pacific_inshore",
+    topDestinations: ["Puget Sound", "Hood Canal", "Willapa Bay", "Grays Harbor", "Strait of Juan de Fuca"],
+    targetSpecies: ["Coho Salmon", "Pink Salmon", "Cutthroat Trout (searun)", "Pacific Halibut", "Rockfish"],
+    bestMonths: [7, 8, 9, 10],
+    tideNotes: ["Coho in Puget Sound (Aug-Oct)", "Pink salmon (odd years, Aug-Sep)", "Sea-run cutthroat in estuaries (Sep-Nov)", "Halibut in Strait (May-Sep)"],
+    quickTip: "Puget Sound in October with coho on a 7-wt: beach fishing for salmon in one of America's most beautiful settings. Find a beach with structure on an outgoing tide at dawn.",
+    licenseUrl: "https://wdfw.wa.gov/fishing/licenses",
+  },
+  AK: {
+    name: "Alaska",
+    abbr: "AK",
+    swRegion: "pacific_inshore",
+    topDestinations: ["Sitka Sound", "Kodiak Island", "Ketchikan Nearshore", "Cook Inlet Estuary", "Prince William Sound"],
+    targetSpecies: ["Coho Salmon", "Chinook Salmon", "Pink Salmon", "Sockeye Salmon", "Halibut", "Rockfish", "Dolly Varden"],
+    bestMonths: [6, 7, 8, 9],
+    tideNotes: ["King salmon nearshore (May-July)", "Sockeye in tidal reaches (June-July)", "Pink and coho (July-Sep)", "Halibut in sound (June-Sep)", "Sea-run Dolly Varden (May-Sep)"],
+    quickTip: "Sitka Sound for coho on fly in August: fish stacked in the kelp beds at dawn. A 10-wt floating line and streamer gets violent strikes from silver salmon that have never seen a fly.",
+    licenseUrl: "https://www.adfg.alaska.gov/index.cfm?adfg=fishinglicenses.main",
+  },
+  HI: {
+    name: "Hawaii",
+    abbr: "HI",
+    swRegion: "pacific_inshore",
+    topDestinations: ["Kaneohe Bay (Oahu)", "Kona Coast (Big Island)", "Maui Flats", "Kauai Nearshore"],
+    targetSpecies: ["Bonefish (oio)", "Bluefin Trevally (ulua)", "Giant Trevally", "Mahi-Mahi (offshore)", "Yellowfin Tuna (offshore)"],
+    bestMonths: [1, 2, 3, 10, 11, 12],
+    tideNotes: ["Bonefish on Kaneohe Bay flats (year-round)", "Trevally on reef edges (year-round)", "Offshore tuna and mahi (Spring)", "Giant trevally (year-round)"],
+    quickTip: "Kaneohe Bay's sand flats hold legitimate bonefish, called 'oio' locally, in 6-18 inches of water year-round. Crazy Charlie in #6. Nearly identical to Bahamas fishing, but in paradise.",
+    licenseUrl: "https://dlnr.hawaii.gov/dar/fishing/freshwater-fishing/",
+  },
+};
+
+export function getSwStateInfo(abbr: string): SWStateInfo | undefined {
+  return swStateData[abbr.toUpperCase()];
+}
+
+export function isCoastalState(abbr: string): boolean {
+  return abbr.toUpperCase() in swStateData;
+}
